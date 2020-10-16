@@ -1,0 +1,38 @@
+from tkinter import*
+import time
+
+window=Tk()
+global timeS
+timeS=time.strftime("%H:%M")
+
+first_label=Label(window,text=timeS)
+first_label.pack()
+
+second_label=Label(window,text="set you alarm in the input next click the button....")
+second_label.pack()
+
+field_one=Entry(window)
+field_one.pack()
+
+def action():
+    value=field_one.get()
+    third_label=Label(window,text=value)
+    third_label.pack()
+
+
+    if(value==timeS):
+        four_label=Label(window,text="It's your time!!!!!!")
+        four_label.pack()
+
+
+verify=Button(window,text="verify",padx=40,pady=20,command=action)
+verify.pack()
+
+
+
+
+
+
+
+
+window.mainloop()
